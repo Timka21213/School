@@ -17,7 +17,7 @@ while True:
         hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
         blur = cv2.GaussianBlur(hsv, (5, 5), 2)   # размываем изображение blur
 
-        # применяем цветовой фильтр
+        # применяем цветовой фильтр, получили ч/б изображение
         thresh = cv2.inRange(blur, hsvMin, hsvMax)
 
         #находим контуры
@@ -54,6 +54,7 @@ while True:
             break
     else:
         break
-
-cap.release() #освобождаем cap
+    
 cv2.destroyAllWindows() #закрываем все окна
+cap.release() #освобождаем cap
+
