@@ -1,6 +1,5 @@
 import cv2
 import numpy as np
-import video
 
 if __name__ == '__main__':
     def nothing(*arg):
