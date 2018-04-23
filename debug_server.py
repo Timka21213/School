@@ -32,6 +32,3 @@ except KeyboardInterrupt:
     print('Ctrl+C pressed')
     serverDebug.server_close()
 cv2.destroyAllWindows()
-
-
-serverDebug.serve_forever() #запустили сервер
