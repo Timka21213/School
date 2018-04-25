@@ -10,11 +10,11 @@ from xmlrpc.server import SimpleXMLRPCServer
 IP_SERVER = '192.168.8.172' #IP адрес сервера
 DEBUG_PORT = 8000 #порт отправки отладочных кадров XML-RPC
 
-def debugFrame(frame):
-    farameName = frame[0]
+def debugFrame(frame): #frame = (имя, jpeg-данные)
+    frameName = frame[0] #имя окна
     imgArray = np.frombuffer(frame[1].data, dtype=np.uint8) #преобразуем в массив np
     img = cv2.imdecode(imgArray, cv2.IMREAD_COLOR) #декодируем
-    cv2.imshow(farameName, img) #отображаем кадр
+    cv2.imshow(frameName, img) #отображаем кадр
     cv2.waitKey(1)
     return 0
 
